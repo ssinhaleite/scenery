@@ -35,6 +35,13 @@ class PowerplantExample: SceneryDefaultApplication("BoxedProteinExample", window
                 PointLight()
             }
 
+            val camlight = PointLight()
+            camlight.position = cam.position
+            camlight.intensity = 1000.0f
+            camlight.linear = 0.001f
+            camlight.quadratic = 0.0f
+            scene.addChild(camlight)
+
             boxes.mapIndexed { i, box ->
                 box.material = Material()
                 box.addChild(lights[i])
@@ -46,9 +53,9 @@ class PowerplantExample: SceneryDefaultApplication("BoxedProteinExample", window
                     rangeRandomizer(0.0f, 1.0f),
                     rangeRandomizer(0.0f, 1.0f))
                 it.parent?.material?.diffuse = it.emissionColor
-                it.intensity = rangeRandomizer(0.01f, 10f)
-                it.linear = 0.01f
-                it.quadratic = 0.01f
+                it.intensity = rangeRandomizer(50f, 250f)
+                it.linear = 0.001f
+                it.quadratic = 0.00f
 
                 scene.addChild(it)
             }
