@@ -22,7 +22,7 @@ class REPL(vararg accessibleObjects: Any) {
     /** Code to evaluate upon launch. */
     protected var startupScriptCode: String = ""
     /** A startup script to evaluate upon launch. */
-    protected var startupScript = "startup.js"
+    protected var startupScript = "startup.kts"
     /** The [startupScript] will be searched for in the resources of this class. */
     protected var startupScriptClass: Class<*> = REPL::class.java
 
@@ -76,7 +76,7 @@ class REPL(vararg accessibleObjects: Any) {
      */
     fun start() {
         // waiting for scijava/scijava-ui-swing#22
-        interpreterWindow.repl.lang("JavaScript")
+        interpreterWindow.repl.lang("Kotlin")
         interpreterWindow.repl.interpreter.eval(startupScriptCode)
     }
 
