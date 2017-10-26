@@ -55,6 +55,18 @@ All keybindings are also listed in the [InputHandler class](./src/main/kotlin/gr
 
 ## Building
 
+### Dependences
+- [ClearGL](https://github.com/ClearVolume/ClearGL)
+After download, enter in the `ClearGL` folder and run `mvn clean install`
+
+- JavaFx
+on Ubuntu
+```shell
+sudo apt install openjfx
+```
+
+### Install
+
 Into a directory of your choice, clone the Git repository of scenery:
 
 ```shell
